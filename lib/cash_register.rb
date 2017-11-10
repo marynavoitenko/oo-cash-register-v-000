@@ -4,7 +4,6 @@ class CashRegister
   def initialize(discount=nil)
     @total = 0
     @discount = discount
-    return "There is no discount to apply." if !@discount
   end
 
   def add_item(title, price, qty=1)
@@ -12,8 +11,12 @@ class CashRegister
   end
 
   def apply_discount
-    self.total = self.total - self.total * self.discount / 100 if self.discount
-    return "After the discount, the total comes to $#{self.total}."
+    if self.discount
+      self.total = self.total - self.total * self.discount / 100
+      return "After the discount, the total comes to $#{self.total}."
+    else
+      puts "There is no discount to apply."
+    end
   end
 
 
