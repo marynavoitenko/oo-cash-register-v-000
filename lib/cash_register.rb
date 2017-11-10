@@ -1,6 +1,5 @@
 class CashRegister
   attr_accessor :discount, :total
-  @items = []
 
   def initialize(discount=nil)
     @total = 0
@@ -13,7 +12,7 @@ class CashRegister
     self.total += @transaction
 
     i = 0
-    while i<=qty
+    while i<qty
       @items << title
       i += 1
     end
