@@ -3,9 +3,8 @@ class CashRegister
 
   def initialize(discount=nil)
     @total = 0
-    if
     @discount = discount
-
+    return "There is no discount to apply." if !discount
   end
 
   def add_item(title, price, qty=1)
