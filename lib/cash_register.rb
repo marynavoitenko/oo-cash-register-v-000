@@ -1,4 +1,4 @@
-require `pry`
+
 class CashRegister
   attr_accessor :discount, :total
 
@@ -27,7 +27,6 @@ class CashRegister
   else
       return "There is no discount to apply."
     end
-      binding.pry
   end
 
   def items
