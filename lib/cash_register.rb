@@ -1,10 +1,11 @@
 class CashRegister
   attr_accessor :discount, :total
-  @@items = []
+  @items = []
 
   def initialize(discount=nil)
     @total = 0
     @discount = discount
+    @items = []
   end
 
   def add_item(title, price, qty=1)
@@ -13,14 +14,14 @@ class CashRegister
 
     i = 0
     while i<=qty
-      @@items << title
+      @items << title
       i += 1
     end
   end
 
   def apply_discount
     if self.discount
-      self.total += self.transaction* self.discount / 100
+      self.total += self.transaction * self.discount / 100
       return "After the discount, the total comes to $#{self.total}."
   else
       return "There is no discount to apply."
