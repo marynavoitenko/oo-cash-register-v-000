@@ -5,7 +5,7 @@ class CashRegister
   def initialize(discount=nil)
     @total = 0
     @discount = discount
-    @items = []
+    @@items = []
   end
 
   def add_item(title, price, qty=1)
@@ -14,7 +14,7 @@ class CashRegister
 
     i = 0
     while i<qty
-      @items << title
+      @@items << title
       i += 1
     end
   end
